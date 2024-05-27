@@ -6,7 +6,8 @@
 char * mergeAlternately(char * word1, char * word2);
 
 void run_test(const char *word1, const char *word2, const char *expected) {
-    char *result = mergeAlternately(word1, word2); // Call the mergeAlternately function
+    // Cast the const char* to char* when calling the function
+    char *result = mergeAlternately((char *)word1, (char *)word2); // Call the mergeAlternately function
     if (strcmp(result, expected) == 0) { // Check if the result matches the expected output
         printf("Test passed: %s + %s => %s\n", word1, word2, result); // Print success message if the test passed
     } else { // If the result does not match the expected output
